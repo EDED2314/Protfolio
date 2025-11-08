@@ -85,10 +85,22 @@ body>.page-content:first-of-type {
   position: fixed;
   top: 0;
   padding: 22px;
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255);
   z-index: 1000;
 }
 
+
+#project-header .main-title {
+  padding-top: 60px;
+}
+
+
+#portfolio-header-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  flex-basis: 50%;
+}
 
 /* Make content responsive across all pages */
 @media only screen and (max-width: 1600px) {
@@ -147,37 +159,9 @@ body>.page-content:first-of-type {
   }
 }
 
-/* Initially hide the main page content until user reveals it */
 #main-content.hidden {
   display: none;
 }
-
-/* Reveal animation */
-#main-content.revealed {
-  animation: fadeUp 550ms ease forwards;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(0px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-/* Portfolio header text container */
-#portfolio-header-text-container {
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-  flex-basis: 50%;
-}
-
-
 
 
 /* About Section */

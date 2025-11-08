@@ -1,38 +1,53 @@
 (function () {
   const hero = document.getElementById('hero');
-  // Only apply reveal animations if we have a hero section
   const page = hero ? hero.nextElementSibling : null;
-  const myWorkLink = document.getElementById('my-work-link');
+  const navbar = document.querySelector('.navbar');
+
+  // Reset scroll position to top and hide content on page load if we have a hero
+  if (hero && page && page.classList.contains('hidden')) {
+    window.scrollTo(0, 0);
+    page.style.display = 'none';
+  }
+
+  function scrollToElementWithOffset(element, offset) {
+    if (!element) return;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+  }
 
   function revealAndScroll(targetSelector) {
     if (!page) return;
     if (page.classList.contains('revealed')) {
-      // already revealed - just scroll to target if provided
+      // already revealed - scroll with offset if target provided
       if (targetSelector) {
-        const t = document.querySelector(targetSelector);
-        if (t) t.scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(targetSelector);
+        if (target) {
+
+          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+          scrollToElementWithOffset(target, navbarHeight);
+        }
       }
       return;
     }
 
-    // show the page content and animate
     page.style.display = 'block';
-    // trigger reflow so the animation class takes effect
-    // eslint-disable-next-line no-unused-expressions
-    void page.offsetWidth;
     page.classList.add('revealed');
 
-    // after a short delay, scroll to the target (or page content)
+    // after a short delay, scroll to target or page content with offset
     setTimeout(() => {
       if (targetSelector) {
-        const t = document.querySelector(targetSelector);
-        if (t) t.scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(targetSelector);
+        if (target) {
+          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+          scrollToElementWithOffset(target, navbarHeight);
+        }
       } else {
-        page.scrollIntoView({ behavior: 'smooth' });
+        // scroll to page content top with offset
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        scrollToElementWithOffset(page, navbarHeight);
       }
     }, 60);
 
-    // remove global listeners (cleanup)
     window.removeEventListener('wheel', onFirstScroll);
     window.removeEventListener('touchstart', onFirstScroll);
     window.removeEventListener('keydown', onFirstKey);
@@ -43,16 +58,7 @@
     if (e && (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ')) revealAndScroll();
   }
 
-  // reveal when user scrolls, touches, or presses down key
   window.addEventListener('wheel', onFirstScroll, { once: true, passive: true });
   window.addEventListener('touchstart', onFirstScroll, { once: true, passive: true });
   window.addEventListener('keydown', onFirstKey, { once: true });
-
-  // if (myWorkLink) {
-  //   myWorkLink.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     // reveal and scroll to my-work-section
-  //     revealAndScroll('#my-work-section');
-  //   });
-  // }
 })();
