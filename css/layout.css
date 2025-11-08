@@ -13,6 +13,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 
@@ -20,21 +21,30 @@ body {
 
 /* Main Page Layout */
 
-#main-content {
+.page-content {
   margin: 225px 425px;
   display: flex;
   flex-direction: column;
   gap: 96px;
 }
 
+/* Special handling for page content after a hero section */
+#hero+.page-content {
+  margin-top: 40px;
+  /* Reduce top margin when after hero */
+}
 
+/* Non-hero pages keep original margins */
+body>.page-content:first-of-type {
+  margin: 225px 425px;
+}
 
 
 /* Portfolio Header */
 
 #portfolio-header {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -46,10 +56,120 @@ body {
 }
 
 .portfolio-header-image {
+  /* Limit the displayed size while keeping it responsive */
+  max-width: 320px;
+  /* change this value to make the image larger/smaller */
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
+/* Hero (full-screen) */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+
+
+
+#hero .hero-inner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  padding: 22px;
+  background: rgb(255, 255, 255);
+  z-index: 1000;
+}
+
+
+/* Make content responsive across all pages */
+@media only screen and (max-width: 1600px) {
+  .page-content {
+    margin: 225px 275px;
+  }
+
+  #hero+.page-content {
+    margin: 40px 275px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-content {
+    margin: 225px 175px;
+  }
+
+  #hero+.page-content {
+    margin: 40px 175px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .page-content {
+    margin: 225px 60px;
+  }
+
+  #hero+.page-content {
+    margin: 40px 60px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .page-content {
+    margin: 150px 40px;
+  }
+
+  #hero+.page-content {
+    margin: 20px 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .page-content {
+    margin: 125px 20px;
+  }
+
+  #hero+.page-content {
+    margin: 20px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #hero+#main-content {
+    margin: 20px 20px;
+  }
+}
+
+/* Initially hide the main page content until user reveals it */
+#main-content.hidden {
+  display: none;
+}
+
+/* Reveal animation */
+#main-content.revealed {
+  animation: fadeUp 550ms ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Portfolio header text container */
 #portfolio-header-text-container {
   display: flex;
   flex-direction: column;
@@ -74,15 +194,22 @@ body {
   gap: 34px;
 }
 
-
-
-
 /* Project Section */
 
 #my-work-section {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 10px;
+
+
+}
+
+/* Legit just main title heltiva but its ok */
+.section-subheader-text {
+  font-size: 40px;
+  font-weight: 700;
+
 }
 
 .projects-container {
@@ -91,27 +218,27 @@ body {
   flex-wrap: wrap;
 }
 
-    /* Project Cards */
+/* Project Cards */
 
-    .project-card {
-      max-width: calc((100% - 32px) / 3);
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
+.project-card {
+  max-width: calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
 
-    .project-card-text-container {
-      flex-direction: column;
-      display: flex;
-      gap: 16px
-    }
+.project-card-text-container {
+  flex-direction: column;
+  display: flex;
+  gap: 16px
+}
 
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-    }
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
 
 
 
@@ -141,35 +268,35 @@ body {
   gap: 34px;
 }
 
-    /* Project Gallery */
+/* Project Gallery */
 
-    #project-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+#project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .project-gallery-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px 16px;
-    }
+.project-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px 16px;
+}
 
-    .gallery-image-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.gallery-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .gallery-image-container.half-width {
-      width: calc((100% - 16px) / 2);
-    }
+.gallery-image-container.half-width {
+  width: calc((100% - 16px) / 2);
+}
 
-    .gallery-image {
-      width: 100%;
-      height: auto;
-    }
+.gallery-image {
+  width: 100%;
+  height: auto;
+}
 
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
@@ -218,6 +345,3 @@ body {
     max-width: 100%;
   }
 }
-
-
-

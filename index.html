@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="./assets/images/goob.jpg" />
+  <link rel="icon" href="./assets/images/serious.png" />
   <title>Eddie Tang</title>
   <meta name="description" content="Eddie Tang's Portfolio">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <a class="nav-title-link" href="./index.html">
-      <span class="nav-title">Portfolio Title</span>
+      <span class="nav-title">Home</span>
       <a class="button" href="mailto:eddiejt2@illinois.edu">
         <span class="button-text">Contact Me</span>
       </a>
@@ -27,38 +27,39 @@
   </div>
 
   <!-- MAIN PAGE CONTENT -->
-  <div id="main-content">
+  <!-- HERO: full-screen centered header that stays visible on entry -->
+  <section id="hero">
+    <div class="hero-inner">
+      <!-- PORTFOLIO HEADER (moved into hero) -->
+      <div id="portfolio-header">
 
-    <!-- PORTFOLIO HEADER -->
-    <div id="portfolio-header">
-      <div id="portfolio-header-image-container">
-        <img src="./assets/images/serious.png" class="portfolio-header-image">
-      </div>
-
-      <div id="portfolio-header-text-container">
-        <div class="header-text">
-          <span class="main-title">I'm Eddie.</span>
-          <div class="body-text">I'm an Electrical Engineer currently studying at the <a
-              href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>. I am also minoring in Computer
-            Science and Semiconductor Engineering.
-          </div>
+        <div id="portfolio-header-image-container">
+          <img src="./assets/images/goob-modified.png" class="portfolio-header-image" alt="Eddie Tang">
         </div>
-        <a class="button" id="my-work-link">
-          <span class="button-text">Check out my projects</span>
-          <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-        </a>
+        <div id="portfolio-header-text-container">
+          <div class="header-text">
+            <span class="main-title">I'm Eddie.</span>
+            <div class="body-text">I'm an Electrical Engineer currently studying at the <a
+                href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>. I am also minoring in Computer
+              Science and Semiconductor Engineering.
+            </div>
+          </div>
+          <a class="button" href="./projects.html"">
+            <span class=" button-text">Check out my projects</span>
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="arrow" />
+          </a>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- ABOUT SECTION -->
-    <!-- 
-        TODO
+  <!-- MAIN PAGE CONTENT (hidden on load until user interacts) -->
+  <div class="page-content hidden">
 
-        - Change the subheader-text to whatever header you want
-        - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
-      -->
+    <!-- Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"-->
     <div id="about-section">
-      <span class="subheader-text">My Background / About Me</span>
+      <span class="section-subheader-text">About Me</span>
       <div class="about-section-content">
         <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit
@@ -71,15 +72,72 @@
           convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst
           vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc
           pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim
+          convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst
+          vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc
+          pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim
+          convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst
+          vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc
+          pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor dignissim
+          convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea dictumst
+          vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa tincidunt nunc
+          pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorpis fevulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorpis fevulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorpis fevulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorpis fevulputate ut.</div>
+        <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget
+          gravida. Aliquet nec ullamcorpis fevulputate ut.</div>
       </div>
     </div>
 
     <!-- PROJECTS / MY WORK SECTION -->
     <div id="my-work-section">
-      <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
-      <span class="subheader-text">My Work / My Projects</span>
+      <span class="section-subheader-text">Projects</span>
 
-      <div class="projects-container">
+      <div class=" projects-container">
+        <div class="project-card">
+          <img src="./assets/images/camera.jpeg" class="project-image">
+          <div class="project-card-text-container">
+            <div class="subheader-text project-title">CAM MK3</div>
+            <div class="body-text project-card-text">Camera board???</div>
+          </div>
+          <a class="button" href="./project-pages/CAM-MK3.html">
+            <span class="button-text">Read More</span>
+            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+          </a>
+        </div>
+        <div class="project-card">
+          <img src="./assets/images/camera.jpeg" class="project-image">
+          <div class="project-card-text-container">
+            <div class="subheader-text project-title">CAM MK3</div>
+            <div class="body-text project-card-text">Camera board???</div>
+          </div>
+          <a class="button" href="./project-pages/CAM-MK3.html">
+            <span class="button-text">Read More</span>
+            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+          </a>
+        </div>
+        <div class="project-card">
+          <img src="./assets/images/camera.jpeg" class="project-image">
+          <div class="project-card-text-container">
+            <div class="subheader-text project-title">CAM MK3</div>
+            <div class="body-text project-card-text">Camera board???</div>
+          </div>
+          <a class="button" href="./project-pages/CAM-MK3.html">
+            <span class="button-text">Read More</span>
+            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+          </a>
+        </div>
         <div class="project-card">
           <img src="./assets/images/camera.jpeg" class="project-image">
           <div class="project-card-text-container">
@@ -114,22 +172,22 @@
                 - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
           -->
 
-        <div class="projects-container">
+        <!-- <div class="projects-container">
           <div class="gallery-image-container">
             <img src="./assets/images/code.jpeg" class="gallery-image">
             <span class="image-caption">Hmmm</span>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
+
   </div>
+
+
 
   <!-- FOOTER -->
   <div id="footer">
-    <!-- <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
-      <image src="./assets/icons/instagram.svg" class="footer-icon" />
-    </a> -->
     <a class="icon-link" target="_blank" href="https://linkedin.com/in/ejtang">
       <image src="./assets/icons/linkedin-big-logo.svg" class="footer-icon" />
     </a>
