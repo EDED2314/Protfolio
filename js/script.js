@@ -61,4 +61,16 @@
   window.addEventListener('wheel', onFirstScroll, { once: true, passive: true });
   window.addEventListener('touchstart', onFirstScroll, { once: true, passive: true });
   window.addEventListener('keydown', onFirstKey, { once: true });
+
+
 })();
+
+const headerImage = document.querySelector('.portfolio-header-image');
+
+headerImage.addEventListener('mouseenter', () => {
+  headerImage.src = './assets/images/smile.png';
+});
+
+headerImage.addEventListener('mouseleave', () => {
+  headerImage.src = './assets/images/serious.png';
+});
