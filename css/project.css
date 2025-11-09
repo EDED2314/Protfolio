@@ -1,0 +1,54 @@
+/* Project Pages */
+
+#project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-header-image {
+    width: 95%;
+    height: auto;
+}
+
+#project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+/* Project Gallery */
+
+#project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-gallery-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px 16px;
+}
+
+.gallery-image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gallery-image-container.half-width {
+    width: calc((100% - 16px) / 2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,45 @@
+/* Portfolio Header */
+
+#portfolio-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#portfolio-header-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 50%;
+}
+
+.portfolio-header-image {
+    /* Limit the displayed size while keeping it responsive */
+    max-width: 320px;
+    /* change this value to make the image larger/smaller */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+#portfolio-header-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    flex-basis: 50%;
+}
+
+/* About Section */
+
+#about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
