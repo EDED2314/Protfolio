@@ -282,6 +282,83 @@ body>.page-content:first-of-type {
   height: auto;
 }
 
+/* Skills UI (index) */
+#skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.skills-instruction {
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+.skills-ui {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.skills-category-button {
+  background: #07b288;
+  color: #fff;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.skills-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 10px;
+  border-radius: 6px;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+.skills-dropdown.open {
+  display: flex;
+}
+
+.skills-link {
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 10px;
+  display: block;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Project skill pills */
+.project-skills,
+.project-card-skills {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.skill-pill {
+  background: #0fb98f;
+  color: #002b2a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {

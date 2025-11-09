@@ -1,0 +1,43 @@
+{
+  "categories": [
+    {
+      "name": "CAD",
+      "items": [
+        { "label": "Caterpillar", "target": "Caterpillar", "type": "experience" },
+        { "label": "6-Axis Robotic Arm", "target": "6-Axis-Robotic-Arm", "type": "project" },
+        { "label": "Hand-Controlled Drone", "target": "Hand-Controlled-Drone", "type": "project" }
+      ]
+    },
+    {
+      "name": "Microcontrollers",
+      "items": [
+        { "label": "Caterpillar", "target": "Caterpillar", "type": "experience" },
+        { "label": "6-Axis Robotic Arm", "target": "6-Axis-Robotic-Arm", "type": "project" },
+        { "label": "CAM MK3", "target": "CAM-MK3", "type": "project" }
+      ]
+    },
+    {
+      "name": "3D Printing",
+      "items": [
+        { "label": "6-Axis Robotic Arm", "target": "6-Axis-Robotic-Arm", "type": "project" },
+        { "label": "Hand-Controlled Drone", "target": "Hand-Controlled-Drone", "type": "project" }
+      ]
+    },
+    {
+      "name": "Python",
+      "items": [
+        { "label": "6-Axis Robotic Arm", "target": "6-Axis-Robotic-Arm", "type": "project" },
+        { "label": "CAM MK3", "target": "CAM-MK3", "type": "project" }
+      ]
+    }
+  ],
+  "projects": {
+    "CAM-MK3": ["Microcontrollers", "Python", "3D Printing", "Electrical Circuits"],
+    "6-Axis-Robotic-Arm": ["Fusion 360", "Microcontrollers", "Dynamics", "ROS"],
+    "Hand-Controlled-Drone": ["3D Printing", "Microcontrollers", "Dynamics"],
+    "Caterpillar": ["Microcontrollers", "Solid Mechanics", "PTC CREO"]
+  },
+  "experiences": {
+    "Caterpillar": ["Microcontrollers", "Electrical Circuits", "Solid Mechanics"]
+  }
+}
