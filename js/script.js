@@ -3,6 +3,20 @@
   const page = hero ? hero.nextElementSibling : null;
   const navbar = document.querySelector('.navbar');
 
+  if (navbar) {
+    const setNavVar = () => {
+      document.documentElement.style.setProperty('--navbar-height', `${navbar.offsetHeight}px`);
+    };
+    setNavVar();
+    window.addEventListener('resize', setNavVar);
+  }
+
+  if (hero) {
+    document.body.classList.add('has-hero');
+  } else {
+    document.body.classList.add('no-hero');
+  }
+
   // Reset scroll position to top and hide content on page load if we have a hero
   if (hero && page && page.classList.contains('hidden')) {
     window.scrollTo(0, 0);
@@ -65,15 +79,23 @@
 
 })();
 
-const headerImage = document.querySelector('.portfolio-header-image');
+// ------------------------
+// Header image changer lol
+// ------------------------
+(function () {
+  const headerImage = document.querySelector('.portfolio-header-image');
 
-headerImage.addEventListener('mouseenter', () => {
-  headerImage.src = './assets/images/smile.png';
-});
+  if (headerImage) {
+    headerImage.addEventListener('mouseenter', () => {
+      headerImage.src = './assets/images/smile.png';
+    });
 
-headerImage.addEventListener('mouseleave', () => {
-  headerImage.src = './assets/images/serious.png';
-});
+    headerImage.addEventListener('mouseleave', () => {
+      headerImage.src = './assets/images/serious.png';
+    });
+  }
+})();
+
 
 // ------------------------
 // Skills data loader
@@ -86,23 +108,12 @@ headerImage.addEventListener('mouseleave', () => {
       const res = await fetch('./assets/data/skills.json');
       data = await res.json();
     } catch (e) {
-      // Fetch can fail when opening the page via file:// (CORS). Try a graceful fallback:
-      console.warn('Could not load skills.json via fetch (likely opened over file://). Trying inline fallback.', e);
-      const inline = document.getElementById('skills-data');
-      if (inline) {
-        try {
-          data = JSON.parse(inline.textContent || inline.innerText);
-        } catch (err) {
-          console.warn('Failed to parse inline skills JSON', err);
-          return;
-        }
-      } else {
-        // No inline fallback present — abort but provide a helpful console message.
-        console.warn('No inline skills fallback found. To load `assets/data/skills.json` you must serve the site over HTTP.\n' +
-          'Quick options:\n' +
-          '  - Run a local server from the project root (PowerShell): `python -m http.server 8000` then open http://localhost:8000/\n' +
-          '  - Or use VS Code Live Server extension to serve the folder.');
-        return;
+      try {
+        const res = await fetch('../assets/data/skills.json');
+        data = await res.json();
+        console.warn('Initial Error', e);
+      } catch (err) {
+        console.error('FATAL ERROR', err);
       }
     }
 
@@ -170,10 +181,7 @@ headerImage.addEventListener('mouseleave', () => {
     });
   }
 
-  // // Run after load
-  // if (document.readyState === 'loading') {
-  //   document.addEventListener('DOMContentLoaded', loadSkills);
-  // } else {
+
   loadSkills();
 
 })();

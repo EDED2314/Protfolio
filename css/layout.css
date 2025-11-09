@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* default --navbar-height will be updated from JS at runtime */
+  --navbar-height: 99px;
+}
+
 html {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -13,11 +18,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-
-
-
 
 /* Main Page Layout */
 
@@ -27,6 +28,7 @@ body {
   flex-direction: column;
   gap: 96px;
 }
+
 
 /* Special handling for page content after a hero section */
 #hero+.page-content {
@@ -66,19 +68,21 @@ body>.page-content:first-of-type {
 
 /* Hero (full-screen) */
 #hero {
-  height: 100vh;
+  /* Keep hero visible below a fixed navbar by reducing its minimum height */
+  min-height: calc(100vh - var(--navbar-height));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 40px;
+  box-sizing: border-box;
 }
-
-
 
 
 #hero .hero-inner {
   width: 100%;
   max-width: 1200px;
+  box-sizing: border-box;
+  padding-top: calc(var(--navbar-height) / 4);
 }
 
 .navbar {
@@ -90,11 +94,6 @@ body>.page-content:first-of-type {
 }
 
 
-#project-header .main-title {
-  padding-top: 60px;
-}
-
-
 #portfolio-header-text-container {
   display: flex;
   flex-direction: column;
@@ -102,14 +101,23 @@ body>.page-content:first-of-type {
   flex-basis: 50%;
 }
 
-/* Make content responsive across all pages */
+@media only screen and (max-width: 2000px) {
+  .page-content {
+    margin: 225px 285px;
+  }
+
+  #hero {
+    margin: 60px 50px;
+  }
+}
+
 @media only screen and (max-width: 1600px) {
   .page-content {
     margin: 225px 275px;
   }
 
-  #hero+.page-content {
-    margin: 40px 275px;
+  #hero {
+    margin: 50px 45px;
   }
 }
 
@@ -118,8 +126,8 @@ body>.page-content:first-of-type {
     margin: 225px 175px;
   }
 
-  #hero+.page-content {
-    margin: 40px 175px;
+  #hero {
+    margin: 47px 25px;
   }
 }
 
@@ -128,8 +136,8 @@ body>.page-content:first-of-type {
     margin: 225px 60px;
   }
 
-  #hero+.page-content {
-    margin: 40px 60px;
+  #hero {
+    margin: 47px 20px;
   }
 }
 
@@ -138,8 +146,8 @@ body>.page-content:first-of-type {
     margin: 150px 40px;
   }
 
-  #hero+.page-content {
-    margin: 20px 40px;
+  #hero {
+    margin: 35px 0px;
   }
 }
 
@@ -148,21 +156,19 @@ body>.page-content:first-of-type {
     margin: 125px 20px;
   }
 
-  #hero+.page-content {
-    margin: 20px 20px;
+  #hero {
+    margin: 30px 0px;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #hero+#main-content {
-    margin: 20px 20px;
-  }
-}
-
-#main-content.hidden {
+.page-content.hidden {
   display: none;
 }
 
+.section-subheader-text {
+  font-size: 40px;
+  font-weight: 700;
+}
 
 /* About Section */
 
@@ -185,15 +191,16 @@ body>.page-content:first-of-type {
   flex-direction: column;
   gap: 16px;
   margin-top: 10px;
-
-
 }
 
-/* Legit just main title heltiva but its ok */
-.section-subheader-text {
-  font-size: 40px;
-  font-weight: 700;
+#project-header .main-title {
+  margin-top: 17px;
+}
 
+
+.project-title {
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .projects-container {
@@ -236,7 +243,7 @@ body>.page-content:first-of-type {
 }
 
 .project-header-image {
-  width: 100%;
+  width: 95%;
   height: auto;
 }
 
@@ -351,58 +358,11 @@ body>.page-content:first-of-type {
 }
 
 .skill-pill {
-  background: #0fb98f;
-  color: #002b2a;
+  background: white;
+  outline: 2px solid black;
+  color: black;
   padding: 8px 12px;
   border-radius: 8px;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-}
-
-
-/* Extra Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 1600px) {
-  #main-content {
-    margin: 225px 275px;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 1200px) {
-  #main-content {
-    margin: 225px 175px;
-  }
-}
-
-/* Large devices (laptops/desktops, 1000px and below) */
-@media only screen and (max-width: 1000px) {
-  #main-content {
-    margin: 225px 75px;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  #main-content {
-    margin: 150px 50px;
-  }
-
-  #portfolio-header {
-    flex-direction: column;
-  }
-
-  .project-card {
-    max-width: calc((100% - 16px) / 2);
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and below) */
-@media only screen and (max-width: 600px) {
-  #main-content {
-    margin: 125px 20px;
-  }
-
-  .project-card {
-    max-width: 100%;
-  }
 }
