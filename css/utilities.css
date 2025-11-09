@@ -78,6 +78,11 @@ a.button:hover {
   cursor: pointer;
 }
 
+#resume-buttons-container {
+  display: flex;
+  gap: 16px;
+}
+
 
 /* Footer Styling */
 

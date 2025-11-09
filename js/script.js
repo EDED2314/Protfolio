@@ -185,3 +185,35 @@
   loadSkills();
 
 })();
+
+// ------------------------
+// Navbar loader
+// ------------------------
+(function () {
+  // Count folder depth
+  const pathParts = window.location.pathname.split('/').filter(p => p); // remove empty parts
+  const depth = pathParts.length - 1; // number of folders deep
+
+  // Construct prefix for assets and index.html
+  let prefix = '';
+  for (let i = 0; i < depth; i++) prefix += '../';
+
+  // Pick correct path to navbar.html
+  const navbarPath = prefix + 'navbar.html';
+
+  fetch(navbarPath)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.text();
+    })
+    .then(data => {
+      // Fix relative links inside navbar
+      if (prefix) {
+        data = data.replaceAll('./assets/', prefix + 'assets/');
+        data = data.replaceAll('./index.html', prefix + 'index.html');
+      }
+      // Inject into page
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Failed to load navbar:', err));
+})();

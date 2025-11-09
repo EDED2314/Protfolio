@@ -62,11 +62,10 @@ body>.page-content:first-of-type {
 }
 
 
-
-
 @media only screen and (max-width: 2000px) {
   .page-content {
     margin: 225px 285px;
+    margin-top: 100px;
   }
 
   #hero {
@@ -77,6 +76,7 @@ body>.page-content:first-of-type {
 @media only screen and (max-width: 1600px) {
   .page-content {
     margin: 225px 275px;
+    margin-top: 100px;
   }
 
   #hero {
@@ -87,6 +87,7 @@ body>.page-content:first-of-type {
 @media only screen and (max-width: 1200px) {
   .page-content {
     margin: 225px 175px;
+    margin-top: 100px;
   }
 
   #hero {
@@ -97,6 +98,7 @@ body>.page-content:first-of-type {
 @media only screen and (max-width: 1000px) {
   .page-content {
     margin: 225px 60px;
+    margin-top: 100px;
   }
 
   #hero {
@@ -107,6 +109,7 @@ body>.page-content:first-of-type {
 @media only screen and (max-width: 800px) {
   .page-content {
     margin: 150px 40px;
+    margin-top: 100px;
   }
 
   #hero {
@@ -117,6 +120,7 @@ body>.page-content:first-of-type {
 @media only screen and (max-width: 600px) {
   .page-content {
     margin: 125px 20px;
+    margin-top: 100px;
   }
 
   #hero {
