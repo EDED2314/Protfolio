@@ -4,7 +4,11 @@
 (function () {
   // Count folder depth
   const pathParts = window.location.pathname.split('/').filter(p => p); // remove empty parts
-  const depth = pathParts.length - 1; // number of folders deep
+  depth = pathParts.length - 1; // number of folders deep
+
+  if (window.location.pathname.includes('Protfolio')) {
+    depth -= 1;
+  }
 
   // Construct prefix for assets and index.html
   let prefix = '';
