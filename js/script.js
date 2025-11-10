@@ -1,15 +1,60 @@
+// ------------------------
+// Navbar loader
+// ------------------------
+(function () {
+  // Count folder depth
+  const pathParts = window.location.pathname.split('/').filter(p => p); // remove empty parts
+  const depth = pathParts.length - 1; // number of folders deep
+
+  // Construct prefix for assets and index.html
+  let prefix = '';
+  for (let i = 0; i < depth; i++) prefix += '../';
+
+  // Pick correct path to navbar.html
+  const navbarPath = prefix + 'navbar.html';
+
+  fetch(navbarPath)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.text();
+    })
+    .then(data => {
+      // Fix relative links inside navbar
+      if (prefix) {
+        data = data.replaceAll('./assets/', prefix + 'assets/');
+        data = data.replaceAll('./index.html', prefix + 'index.html');
+      }
+      // Inject into page
+      document.getElementById('navbar-placeholder').innerHTML = data;
+      // Notify listeners that navbar HTML has been injected (some code may need to re-measure)
+      window.dispatchEvent(new Event('navbar:loaded'));
+    })
+    .catch(err => console.error('Failed to load navbar:', err));
+})();
+
+
 (function () {
   const hero = document.getElementById('hero');
   const page = hero ? hero.nextElementSibling : null;
-  const navbar = document.querySelector('.navbar');
 
-  if (navbar) {
-    const setNavVar = () => {
-      document.documentElement.style.setProperty('--navbar-height', `${navbar.offsetHeight}px`);
-    };
-    setNavVar();
-    window.addEventListener('resize', setNavVar);
+  // Navbar may be injected asynchronously. Use helpers that query it on-demand.
+  function getNavbar() {
+    return document.querySelector('.navbar');
   }
+
+  function getNavbarHeight() {
+    const n = getNavbar();
+    return n ? n.offsetHeight : 0;
+  }
+
+  function setNavVar() {
+    document.documentElement.style.setProperty('--navbar-height', `${getNavbarHeight()}px`);
+  }
+
+  // Initialize and update on resize; also update when navbar HTML is injected
+  setNavVar();
+  window.addEventListener('resize', setNavVar);
+  window.addEventListener('navbar:loaded', setNavVar);
 
   if (hero) {
     document.body.classList.add('has-hero');
@@ -32,12 +77,10 @@
   function revealAndScroll(targetSelector) {
     if (!page) return;
     if (page.classList.contains('revealed')) {
-      // already revealed - scroll with offset if target provided
       if (targetSelector) {
         const target = document.querySelector(targetSelector);
         if (target) {
-
-          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+          const navbarHeight = getNavbarHeight();
           scrollToElementWithOffset(target, navbarHeight);
         }
       }
@@ -47,20 +90,22 @@
     page.style.display = 'block';
     page.classList.add('revealed');
 
-    // after a short delay, scroll to target or page content with offset
-    setTimeout(() => {
-      if (targetSelector) {
-        const target = document.querySelector(targetSelector);
-        if (target) {
-          const navbarHeight = navbar ? navbar.offsetHeight : 0;
-          scrollToElementWithOffset(target, navbarHeight);
+    // allow the browser to render the revealed content then scroll
+    // use two requestAnimationFrame calls to ensure layout/paint are complete
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (targetSelector) {
+          const target = document.querySelector(targetSelector);
+          if (target) {
+            const navbarHeight = getNavbarHeight();
+            scrollToElementWithOffset(target, navbarHeight);
+          }
+        } else {
+          const navbarHeight = getNavbarHeight();
+          scrollToElementWithOffset(page, navbarHeight);
         }
-      } else {
-        // scroll to page content top with offset
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-        scrollToElementWithOffset(page, navbarHeight);
-      }
-    }, 60);
+      });
+    });
 
     window.removeEventListener('wheel', onFirstScroll);
     window.removeEventListener('touchstart', onFirstScroll);
@@ -186,34 +231,3 @@
 
 })();
 
-// ------------------------
-// Navbar loader
-// ------------------------
-(function () {
-  // Count folder depth
-  const pathParts = window.location.pathname.split('/').filter(p => p); // remove empty parts
-  const depth = pathParts.length - 1; // number of folders deep
-
-  // Construct prefix for assets and index.html
-  let prefix = '';
-  for (let i = 0; i < depth; i++) prefix += '../';
-
-  // Pick correct path to navbar.html
-  const navbarPath = prefix + 'navbar.html';
-
-  fetch(navbarPath)
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.text();
-    })
-    .then(data => {
-      // Fix relative links inside navbar
-      if (prefix) {
-        data = data.replaceAll('./assets/', prefix + 'assets/');
-        data = data.replaceAll('./index.html', prefix + 'index.html');
-      }
-      // Inject into page
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    })
-    .catch(err => console.error('Failed to load navbar:', err));
-})();

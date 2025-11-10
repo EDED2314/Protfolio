@@ -32,13 +32,8 @@ body {
 
 /* Special handling for page content after a hero section */
 #hero+.page-content {
-  margin-top: 40px;
+  margin-top: calc(var(--navbar-height));
   /* Reduce top margin when after hero */
-}
-
-/* Non-hero pages keep original margins */
-body>.page-content:first-of-type {
-  margin: 225px 425px;
 }
 
 
