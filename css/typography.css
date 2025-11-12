@@ -1,3 +1,12 @@
+:root {
+  --COLOR-1: #ADD8E6;
+  --COLOR-2: #DFC9E8;
+  --COLOR-3: #EDC8BB;
+  --COLOR-4: #C1D7B9;
+  --COLOR-5: #B1BED9;
+  --COLOR-6: #FFDAE5;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

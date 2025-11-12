@@ -5,7 +5,9 @@
 :root {
   /* default --navbar-height will be updated from JS at runtime */
   --navbar-height: 99px;
+
 }
+
 
 html {
   text-size-adjust: none;
