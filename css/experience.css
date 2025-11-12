@@ -1,0 +1,49 @@
+/* Experience Page */
+
+#experience-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#experience-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.experience-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+/* Experience Image */
+
+#experience-image {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.experience-image-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px 16px;
+}
+
+.experience-image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gallery-image-container.half-width {
+    width: calc((100% - 16px) / 2);
+}
+
+.experience-image {
+    width: 100%;
+    height: auto;
+}

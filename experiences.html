@@ -3,54 +3,33 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="../assets/images/serious.png" />
-  <title>CHANGE TITLE</title>
+  <link rel="icon" href="./assets/images/serious.png" />
+  <title>Eddie Tang - Experience</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/typography.css">
-  <link rel="stylesheet" href="../css/utilities.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/experience.css">
+  <link rel="stylesheet" href="../css/skills.css">
+  <link rel="stylesheet" href="./css/typography.css">
+  <link rel="stylesheet" href="./css/utilities.css">
 
-  <script defer src="../js/script.js"></script>
+  <script defer src="./js/script.js"></script>
 </head>
 
 <body>
   <div id="navbar-placeholder"></div>
 
-  <!-- MAIN PAGE CONTENT -->
-  <!-- HERO: full-screen centered header that stays visible on entry -->
-  <section id="hero">
-    <div class="hero-inner">
-      <div id="project-header">
-        <!-- 
-            TODO
 
-            - Change the 'main-title' text to the name of your project
-            - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
-            - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
-          -->
-        <div class="main-title">Project Name</div>
-        <div class="body-text">A small description about the project goes here, get the reader hooked on the project and
-          tell them why they should continue to read this page. Give it a sweet tagline.</div>
-      </div>
+  <div class="page-content">
+
+    <div id="experience-header" class="header-container">
+      <div class="main-title-big">Professional Experience</div>
 
     </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <div class="page-content hidden">
-
-    <!-- PROJECT DETAILS -->
-    <!-- 
-        TODO
-
-        - Change the 'subheader-text' to whatever header you want for project details
-        - Add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
-    <div id="project-details">
-      <div class="section-subheader-text">Project Details / Background</div>
-      <div class="project-details-content">
+    <div id="experience-details">
+      <div class="section-subheader-text">Experience Name</div>
+      <div class="experience-details-content">
         <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt
           ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in hendrerit
@@ -67,56 +46,24 @@
       </div>
     </div>
 
-    <!-- IMAGE GALLERY -->
-    <div id="project-gallery">
-      <!-- TODO - Change the 'subheader-text' to whatever you want the Gallery section header to say -->
-      <div class="section-subheader-text">Image Gallery</div>
-      <div class="project-gallery-content">
-        <!-- 
-              TODO
+    <!-- Skills for this project will be injected here by JS. Set data-project to the slug used in assets/data/skills.json -->
+    <div class="project-skills" data-project="CAM-MK3"></div>
 
-              This is where the images in the gallery live. Here's a simple gallery image for you to copy:
-
-              Full Width Image:
-
-                <div class="gallery-image-container">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              Half Width Image: 
-
-                <div class="gallery-image-container half-width">
-                  <img src="../assets/images/IMAGE_NAME" class="gallery-image">
-                  <span class="image-caption">IMAGE_CAPTION</span>
-                </div>
-
-              - To add an image to the this area, copy one of the above, paste it below this comment, and change the following:
-                  - IMAGE_NAME: the name of the image file in assets/images
-                  - IMAGE_CAPTION: to the caption of the image
-            -->
-        <div class="gallery-image-container half-width">
-          <img src="../assets/images/code.jpeg" class="gallery-image">
-          <span class="image-caption">Give your image a caption. People love context.</span>
-        </div>
-        <div class="gallery-image-container half-width">
-          <img src="../assets/images/sketchbook.jpeg" class="gallery-image">
-          <span class="image-caption">Give your image a caption. People love context.</span>
-        </div>
-        <div class="gallery-image-container">
-          <img src="../assets/images/camera.jpeg" class="gallery-image">
+    <div id="experience-image">
+      <div class="experience-image-content">
+        <div class="experience-image-container half-width">
+          <img src="./assets/images/code.jpeg" class="experience-image">
           <span class="image-caption">Give your image a caption. People love context.</span>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <div id="footer">
       <a class="icon-link" target="_blank" href="https://linkedin.com/in/ejtang">
-        <image src="../assets/icons/linkedin-big-logo.svg" class="footer-icon" />
+        <image src="./assets/icons/linkedin-big-logo.svg" class="footer-icon" />
       </a>
       <a class="icon-link" href="mailto:eddiejt2@outlook.com">
-        <image src="../assets/icons/mail.svg" class="footer-icon" />
+        <image src="./assets/icons/mail.svg" class="footer-icon" />
       </a>
     </div>
 

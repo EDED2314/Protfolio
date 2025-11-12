@@ -17,6 +17,11 @@ body {
   font-weight: 500;
 }
 
+.main-title-big {
+  font-size: 50px;
+  font-weight: 700;
+}
+
 .main-title {
   font-size: 40px;
   font-weight: 700;
