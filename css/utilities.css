@@ -79,11 +79,6 @@ a.button:hover {
   cursor: pointer;
 }
 
-#resume-buttons-container {
-  display: flex;
-  gap: 16px;
-}
-
 a.button#home-button {
   background-color: var(--COLOR-3);
 }
@@ -100,12 +95,9 @@ a.button#swe-resume-button {
   background-color: var(--COLOR-4);
 }
 
-a.button#goto-projects-page-button {
-  background-color: var(--COLOR-1);
-}
-
-a.button.read-more {
-  background-color: var(--COLOR-1);
+#resume-buttons-container {
+  display: flex;
+  gap: 16px;
 }
 
 /* Footer Styling */

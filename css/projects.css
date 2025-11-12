@@ -40,3 +40,7 @@
     object-fit: cover;
     object-position: center;
 }
+
+a.button.read-more {
+    background-color: var(--COLOR-1);
+}
