@@ -185,9 +185,9 @@
         (cat.items || []).forEach(it => {
           const a = document.createElement('a');
           a.className = 'skills-link';
-          // link: project pages under project-pages, experiences anchor to index
+          // link: project pages under project-pages-ee, experiences anchor to index
           if (it.type === 'project') {
-            a.href = `./project-pages/${it.target}.html`;
+            a.href = `./project-pages-ee/${it.target}.html`;
           } else {
             a.href = `#${it.target}`;
           }

@@ -31,6 +31,12 @@
     flex-basis: 50%;
 }
 
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /* Button Column */
 
 #button-column {
