@@ -1,6 +1,7 @@
 /* Navbar-specific styles moved here from utilities.css */
 
-/* Navbar container */
+/* Navbar container - apply specifically to injected navbar under #navbar-placeholder to avoid conflicts */
+#navbar-placeholder>.navbar,
 .navbar {
     width: 100%;
     padding: 15px 50px;
@@ -25,6 +26,8 @@
 
 /* Small devices (portrait tablets and large phones, 800px and below) */
 @media only screen and (max-width: 800px) {
+
+    #navbar-placeholder>.navbar,
     .navbar {
         padding: 20px 20px;
         background-color: white
@@ -50,44 +53,54 @@ a.button#ee-resume-button {
 }
 
 a.button#swe-resume-button {
-    background-color: var(--COLOR-4);
+    background-color: var(--COLOR-6);
 }
 
-/* Show SWE resume button only when hovering the EE resume button or the SWE button itself.
-   This keeps the SWE button hidden by default and prevents it from being focusable/clickable
-   until revealed by hover. It also smoothly transitions in/out. */
+/* SWE resume button is hidden by default (fades in). We'll reveal it when the left group is hovered.
+   The left-group will shift left to make room (so SWE stays in place).
+   Use negative margin to pull the SWE button left into the gap created by the hidden state,
+   so there's no visible spacing when hidden. */
 a.button#swe-resume-button {
     opacity: 0;
     pointer-events: none;
-    /* prevent tabbing/clicks when hidden */
-    transform: translateX(-6px);
-    transition: opacity 150ms ease, transform 150ms ease;
+    transition: opacity 150ms ease;
+    margin-left: -135px;
+    /* negative margin to overlap into the gap (16px gap + button width ~90px) */
 }
 
-/* Reveal when hovering the EE resume button (adjacent sibling) or when hovering the SWE button itself */
-a.button#ee-resume-button:hover+a.button#swe-resume-button,
+/* When hovering the left group (Professional Experience + EE Resume) reveal SWE and shift the group left */
+#resume-left-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    transition: transform 150ms ease;
+}
+
+#resume-buttons-container:hover #resume-left-group {
+    transform: translateX(-140px);
+    /* shift left to make room for SWE button; adjust if needed */
+}
+
+#resume-buttons-container:hover a.button#swe-resume-button,
 a.button#swe-resume-button:hover {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
 }
 
-/* Prevent brief hover-loss when moving the mouse from the EE resume button to the SWE resume button
-   by extending the EE button's hover area into the horizontal gap on hover-capable devices. */
+/* Prevent brief hover-loss by extending the left group's hover area into the gap on hover-capable devices */
 @media (hover: hover) and (pointer: fine) {
-    a.button#ee-resume-button {
+    #resume-left-group {
         position: relative;
     }
 
-    a.button#ee-resume-button::after {
+    #resume-left-group::after {
         content: "";
         position: absolute;
         left: 100%;
         top: 0;
-        width: 12px;
+        width: 24px;
         /* slightly larger than the gap to be safe */
         height: 100%;
-        /* transparent element that captures pointer so :hover stays active */
         background: transparent;
         pointer-events: auto;
     }
