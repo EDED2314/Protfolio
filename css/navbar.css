@@ -56,51 +56,50 @@ a.button#swe-resume-button {
     background-color: var(--COLOR-6);
 }
 
-/* SWE resume button is hidden by default (fades in). We'll reveal it when the left group is hovered.
-   The left-group will shift left to make room (so SWE stays in place).
-   Use negative margin to pull the SWE button left into the gap created by the hidden state,
-   so there's no visible spacing when hidden. */
+/* a.button#swe-resume-button {
+    padding: 5px 10px;
+    background-color: var(--COLOR-6);
+    border: 3px solid #141414;
+}
+
+a.button#swe-resume-button .button-text {
+    font-size: 10px;
+}
+ */
+
 a.button#swe-resume-button {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 150ms ease;
-    margin-left: -135px;
-    /* negative margin to overlap into the gap (16px gap + button width ~90px) */
+    transform: translateY(-10px);
+    transition: opacity 150ms ease, transform 150ms ease;
+    position: absolute;
+    top: 100%;
+    right: 50px;
+    margin-top: -7px;
 }
 
-/* When hovering the left group (Professional Experience + EE Resume) reveal SWE and shift the group left */
-#resume-left-group {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    transition: transform 150ms ease;
+a.button#ee-resume-button {
+    position: relative;
 }
 
-#resume-buttons-container:hover #resume-left-group {
-    transform: translateX(-140px);
-    /* shift left to make room for SWE button; adjust if needed */
-}
-
-#resume-buttons-container:hover a.button#swe-resume-button,
+/* Reveal SWE button when hovering the EE resume button or the SWE button itself */
+a.button#ee-resume-button:hover+a.button#swe-resume-button,
 a.button#swe-resume-button:hover {
     opacity: 1;
     pointer-events: auto;
+    transform: translateY(0);
 }
 
-/* Prevent brief hover-loss by extending the left group's hover area into the gap on hover-capable devices */
+/* Prevent brief hover-loss when moving the mouse from the EE resume button to the SWE resume button
+   by extending the EE button's hover area down into the gap on hover-capable devices. */
 @media (hover: hover) and (pointer: fine) {
-    #resume-left-group {
-        position: relative;
-    }
-
-    #resume-left-group::after {
+    a.button#ee-resume-button::after {
         content: "";
         position: absolute;
-        left: 100%;
-        top: 0;
-        width: 24px;
-        /* slightly larger than the gap to be safe */
-        height: 100%;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 20px;
         background: transparent;
         pointer-events: auto;
     }
