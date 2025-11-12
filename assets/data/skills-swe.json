@@ -1,0 +1,137 @@
+{
+    "categories": [
+        {
+            "name": "Web Development",
+            "items": [
+                {
+                    "label": "Portfolio Site",
+                    "target": "portfolio-site",
+                    "type": "project"
+                },
+                {
+                    "label": "E-Commerce Platform",
+                    "target": "ecommerce-platform",
+                    "type": "project"
+                },
+                {
+                    "label": "Task Management App",
+                    "target": "task-manager",
+                    "type": "project"
+                }
+            ]
+        },
+        {
+            "name": "JavaScript/TypeScript",
+            "items": [
+                {
+                    "label": "Portfolio Site",
+                    "target": "portfolio-site",
+                    "type": "project"
+                },
+                {
+                    "label": "Real-Time Chat App",
+                    "target": "chat-app",
+                    "type": "project"
+                },
+                {
+                    "label": "Intern Experience",
+                    "target": "intern-swe",
+                    "type": "experience"
+                }
+            ]
+        },
+        {
+            "name": "React/Frontend Frameworks",
+            "items": [
+                {
+                    "label": "E-Commerce Platform",
+                    "target": "ecommerce-platform",
+                    "type": "project"
+                },
+                {
+                    "label": "Task Management App",
+                    "target": "task-manager",
+                    "type": "project"
+                },
+                {
+                    "label": "Intern Experience",
+                    "target": "intern-swe",
+                    "type": "experience"
+                }
+            ]
+        },
+        {
+            "name": "Backend & Databases",
+            "items": [
+                {
+                    "label": "E-Commerce Platform",
+                    "target": "ecommerce-platform",
+                    "type": "project"
+                },
+                {
+                    "label": "Real-Time Chat App",
+                    "target": "chat-app",
+                    "type": "project"
+                },
+                {
+                    "label": "Intern Experience",
+                    "target": "intern-swe",
+                    "type": "experience"
+                }
+            ]
+        },
+        {
+            "name": "DevOps & Cloud",
+            "items": [
+                {
+                    "label": "E-Commerce Platform",
+                    "target": "ecommerce-platform",
+                    "type": "project"
+                },
+                {
+                    "label": "Intern Experience",
+                    "target": "intern-swe",
+                    "type": "experience"
+                }
+            ]
+        }
+    ],
+    "projects": {
+        "portfolio-site": [
+            "HTML/CSS",
+            "JavaScript",
+            "Responsive Design",
+            "Git"
+        ],
+        "ecommerce-platform": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe",
+            "Docker"
+        ],
+        "task-manager": [
+            "React",
+            "TypeScript",
+            "Redux",
+            "Material-UI",
+            "Firebase"
+        ],
+        "chat-app": [
+            "WebSockets",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "React"
+        ]
+    },
+    "experiences": {
+        "intern-swe": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "SQL",
+            "Agile"
+        ]
+    }
+}

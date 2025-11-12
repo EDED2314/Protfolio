@@ -129,22 +129,6 @@
 
 })();
 
-// ------------------------
-// Header image changer lol
-// ------------------------
-(function () {
-  const headerImage = document.querySelector('.portfolio-header-image');
-
-  if (headerImage) {
-    headerImage.addEventListener('mouseenter', () => {
-      headerImage.src = './assets/images/smile.png';
-    });
-
-    headerImage.addEventListener('mouseleave', () => {
-      headerImage.src = './assets/images/serious.png';
-    });
-  }
-})();
 
 
 // ------------------------
@@ -152,14 +136,20 @@
 // ------------------------
 (function () {
   async function loadSkills() {
+    // Determine which skills file to load based on the current page URL
+    const currentPath = window.location.pathname;
+    const isSWEPage = currentPath.includes('swe') || currentPath.includes('SWE');
+    const skillsFileName = isSWEPage ? 'skills-swe.json' : 'skills.json';
+
     let data;
     try {
-      // Prefer fetching the JSON over HTTP(S).
-      const res = await fetch('./assets/data/skills.json');
+      // Prefer fetching the JSON over HTTP(S) from the root assets/data folder
+      const res = await fetch(`./assets/data/${skillsFileName}`);
       data = await res.json();
     } catch (e) {
       try {
-        const res = await fetch('../assets/data/skills.json');
+        // Fallback for nested pages (like project-pages)
+        const res = await fetch(`../assets/data/${skillsFileName}`);
         data = await res.json();
         console.warn('Initial Error', e);
       } catch (err) {
@@ -185,9 +175,10 @@
         (cat.items || []).forEach(it => {
           const a = document.createElement('a');
           a.className = 'skills-link';
-          // link: project pages under project-pages-ee, experiences anchor to index
+          // link: project pages under project-pages-ee or project-pages-swe, experiences anchor to index
+          const projectPages = isSWEPage ? 'project-pages-swe' : 'project-pages-ee';
           if (it.type === 'project') {
-            a.href = `./project-pages-ee/${it.target}.html`;
+            a.href = `./${projectPages}/${it.target}.html`;
           } else {
             a.href = `#${it.target}`;
           }
