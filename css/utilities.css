@@ -23,42 +23,6 @@ a.icon-link:hover {
 }
 
 
-/* Navbar Styling */
-
-.navbar {
-  width: 100%;
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255);
-  z-index: 1000;
-}
-
-/* .navbar {} */
-
-.nav-title-link {
-  color: black;
-  text-decoration: none;
-}
-
-.nav-title-link:hover {
-  text-decoration: underline;
-}
-
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  .navbar {
-    padding: 20px 20px;
-    background-color: white
-  }
-}
-
-
 /* Button Styling */
 
 a.button {
@@ -79,25 +43,9 @@ a.button:hover {
   cursor: pointer;
 }
 
+
 a.button#home-button {
   background-color: var(--COLOR-3);
-}
-
-a.button#goto-experiences-page-button {
-  background-color: var(--COLOR-1);
-}
-
-a.button#ee-resume-button {
-  background-color: var(--COLOR-4);
-}
-
-a.button#swe-resume-button {
-  background-color: var(--COLOR-4);
-}
-
-#resume-buttons-container {
-  display: flex;
-  gap: 16px;
 }
 
 /* Footer Styling */
