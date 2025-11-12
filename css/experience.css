@@ -12,6 +12,13 @@
     gap: 16px;
 }
 
+#my-experiences-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
 .experience-details-content {
     display: flex;
     flex-direction: column;

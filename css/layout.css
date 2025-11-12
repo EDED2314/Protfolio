@@ -26,7 +26,7 @@ body {
   margin: 225px 425px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 96px;
 }
 
 
@@ -125,4 +125,18 @@ body {
 
 .page-content.hidden {
   display: none;
+}
+
+
+/* Divider used under main titles (projects, experiences, etc.)
+   Sits flush to the left inside the `.page-content` container and
+   stretches to the container width. Tweak color/height/margins as desired.
+*/
+.section-divider {
+  border: none;
+  height: 2px;
+  background: #141414;
+  margin: 20px 0 24px 0;
+  width: 100%;
+  display: block;
 }
