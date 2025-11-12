@@ -27,6 +27,7 @@
       if (prefix) {
         data = data.replaceAll('./assets/', prefix + 'assets/');
         data = data.replaceAll('./index.html', prefix + 'index.html');
+        data = data.replaceAll('./experiences.html', prefix + 'experiences.html');
       }
       // Inject into page
       document.getElementById('navbar-placeholder').innerHTML = data;
