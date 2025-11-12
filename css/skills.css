@@ -25,23 +25,44 @@
 }
 
 .skills-category-button {
-    background: #07b288;
-    color: #fff;
-    border: 3px solid rgba(0, 0, 0, 0.2);
+    background: white;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); */
+    /* outline: 2px solid black; */
+    /* color: black; */
     padding: 14px 18px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
+}
+
+
+.skills-category-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    background-clip: padding-box;
+    transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.skills-category-button:hover {
+    /* keep hover subtle and consistent */
+    border-color: rgb(0, 0, 0);
+}
+
+.skills-category-button:focus {
+    outline: none;
+}
+
+.skills-category-button:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
 }
 
 .skills-dropdown {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.06);
     padding: 10px;
     border-radius: 6px;
-    border: 4px solid rgba(255, 255, 255, 0.9);
 }
 
 .skills-dropdown.open {
@@ -49,12 +70,13 @@
 }
 
 .skills-link {
+    font-size: 15px;
     color: inherit;
     text-decoration: none;
     padding: 8px 10px;
     display: block;
     border-radius: 6px;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.041);
 }
 
 /* Project skill pills */
