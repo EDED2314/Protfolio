@@ -100,33 +100,6 @@ a.button#goto-swe-projects-page-button:hover {
     }
 }
 
-/* Hover hint arc text for portfolio header image */
-.hover-hint-arc {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 140px;
-    height: 140px;
-    pointer-events: none;
-}
-
-.hover-hint-text {
-    font-size: 12px;
-    fill: rgba(100, 100, 100, 0.5);
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: fill 200ms ease;
-}
-
-/* Lighten/brighten the hint text on hover of the image */
-.portfolio-header-image:hover~.hover-hint-arc .hover-hint-text {
-    fill: rgba(100, 100, 100, 0.8);
-}
-
-/* Make the hint arc container position relative so SVG positions correctly */
-#portfolio-header-image-container {
-    position: relative;
-}
 
 
 /* About Section */
