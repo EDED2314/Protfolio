@@ -78,6 +78,7 @@
     padding: 8px 10px;
     display: block;
     border-radius: 6px;
+    border: 2px solid black;
     background: var(--COLOR-2);
 }
 
