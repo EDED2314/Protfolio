@@ -20,6 +20,12 @@
     align-items: flex-start;
 }
 
+.experience-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
 .experience-row-left {
     flex: 1 1 0;
     gap: 16px;
