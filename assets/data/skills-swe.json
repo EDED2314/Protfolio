@@ -125,13 +125,5 @@
             "React"
         ]
     },
-    "experiences": {
-        "intern-swe": [
-            "JavaScript",
-            "React",
-            "Node.js",
-            "SQL",
-            "Agile"
-        ]
-    }
+    "experiences": {}
 }

@@ -67,7 +67,7 @@ body {
 
 @media only screen and (max-width: 1600px) {
   .page-content {
-    margin: 225px 275px;
+    margin: 225px 205px;
     margin-top: 100px;
   }
 
@@ -84,6 +84,17 @@ body {
 
   #hero {
     margin: 47px 25px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .page-content {
+    margin: 225px 100px;
+    margin-top: 100px;
+  }
+
+  #hero {
+    margin: 47px 20px;
   }
 }
 

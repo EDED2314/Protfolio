@@ -1,22 +1,28 @@
 /* Experience Page */
 
+#my-experiences-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
 #experience-header {
     display: flex;
     flex-direction: column;
     gap: 0px;
 }
 
-#experience-details {
+
+.experience-row {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+    align-items: flex-start;
 }
 
-#my-experiences-section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+.experience-row-left {
+    flex: 1 1 0;
+    gap: 16px;
 }
 
 .experience-details-content {
@@ -25,13 +31,13 @@
     gap: 34px;
 }
 
-/* Experience Image */
-
-#experience-image {
+.experience-row-right {
+    flex: 0 1 360px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
+
 
 .experience-image-content {
     display: flex;
@@ -39,18 +45,36 @@
     gap: 34px 16px;
 }
 
+
+
 .experience-image-container {
-    width: 100%;
+    width: calc((100% - 16px) / 1.2);
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.gallery-image-container.half-width {
-    width: calc((100% - 16px) / 2);
-}
-
 .experience-image {
     width: 100%;
     height: auto;
+}
+
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+
+@media (max-width: 800px) {
+    .experience-row {
+        flex-direction: column;
+    }
+
+    .experience-row-right {
+        flex: 1 1 0;
+        width: 100%;
+    }
 }

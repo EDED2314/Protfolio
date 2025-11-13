@@ -220,6 +220,13 @@
       const skills = data.projects && data.projects[key] ? data.projects[key] : [];
       renderSkillPills(el, skills.slice(0, 3));
     });
+
+    // Render experience skills into elements with class .experience-skills and attribute data-experience
+    document.querySelectorAll('.experience-skills[data-experience]').forEach(el => {
+      const key = el.getAttribute('data-experience');
+      const skills = (data.experiences && data.experiences[key]) ? data.experiences[key] : [];
+      renderSkillPills(el, skills);
+    });
   }
 
 
