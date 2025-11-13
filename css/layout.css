@@ -2,8 +2,6 @@
   box-sizing: border-box;
 }
 
-
-
 html {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -12,6 +10,7 @@ html {
 }
 
 body {
+  background-color: beige;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
