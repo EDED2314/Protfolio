@@ -7,13 +7,6 @@
     margin-top: 10px;
 }
 
-#experience-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-}
-
-
 .experience-row {
     display: flex;
     gap: 24px;
@@ -29,7 +22,38 @@
 .experience-row-left {
     flex: 1 1 0;
     gap: 16px;
+    display: flex;
+    flex-direction: column;
 }
+
+.experience-brief-company {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+/* .experience-brief-more-detail {
+    font-size: 40px;
+    font-weight: 700;
+} */
+
+.experience-brief-other-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.experience-brief-role {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.experience-brief-duration {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.678);
+}
+
 
 .experience-details-content {
     display: flex;
