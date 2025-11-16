@@ -30,7 +30,8 @@
       "Python",
       "Bash",
       "Slurm",
-      "Scientific Computing"
+      "Scientific Computing",
+      "SSH"
     ],
     "Princeton-University": [
       "Density Functional Theory Simulations",
@@ -38,7 +39,8 @@
       "Machine Learning",
       "Bash",
       "Slurm",
-      "Scientific Computing"
+      "Scientific Computing",
+      "SSH"
     ]
   }
 }
