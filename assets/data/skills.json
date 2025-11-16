@@ -4,26 +4,24 @@
       "name": "Python",
       "items": [
         {
-          "label": "6-Axis Robotic Arm",
-          "target": "6-Axis-Robotic-Arm",
-          "type": "project"
+          "label": "Rowan University",
+          "target": "Rowan-University",
+          "type": "experience"
         },
         {
-          "label": "CAM MK3",
-          "target": "CAM-MK3",
-          "type": "project"
+          "label": "Princeton University",
+          "target": "Princeton-University",
+          "type": "experience"
+        },
+        {
+          "label": "Monty Computer Science Club",
+          "target": "monty-csc",
+          "type": "experience"
         }
       ]
     }
   ],
-  "projects": {
-    "CAM-MK3": [
-      "Microcontrollers",
-      "Python",
-      "3D Printing",
-      "Electrical Circuits"
-    ]
-  },
+  "projects": {},
   "experiences": {
     "Rowan-University": [
       "Molecular Dynamics Simulations",

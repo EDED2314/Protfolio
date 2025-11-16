@@ -240,7 +240,7 @@
         </div>
 
         <hr class="section-divider" />
-        <div class="experience-row">
+        <div class="experience-row" id="monty-csc">
 
           <div class="experience-row-left">
             <div class="experience-brief">
@@ -339,3 +339,30 @@
 </body>
 
 </html>
+<!-- Fix anchor scrolling when navbar is injected asynchronously -->
+<script>
+  (function () {
+    function adjustAnchor() {
+      if (!location.hash) return;
+      try {
+        const id = decodeURIComponent(location.hash.slice(1));
+        const target = document.getElementById(id);
+        if (!target) return;
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const extra = 99;
+        // Wait a tick to ensure layout is stable
+        setTimeout(() => {
+          const rect = target.getBoundingClientRect();
+          const targetY = window.pageYOffset + rect.top - navbarHeight - extra;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }, 40);
+      } catch (e) {
+        console.error('adjustAnchor failed', e);
+      }
+    }
+
+    window.addEventListener('navbar:loaded', adjustAnchor);
+    window.addEventListener('load', adjustAnchor);
+  })();
+</script>

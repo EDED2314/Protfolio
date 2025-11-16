@@ -180,7 +180,7 @@
           if (it.type === 'project') {
             a.href = `./${projectPages}/${it.target}.html`;
           } else {
-            a.href = `#${it.target}`;
+            a.href = `./experiences.html#${it.target}`;
           }
           a.textContent = it.label;
           panel.appendChild(a);
