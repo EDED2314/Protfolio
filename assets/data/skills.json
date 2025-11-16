@@ -50,6 +50,19 @@
       "Python",
       "C++",
       "Git"
+    ],
+    "monty-aerospace": [
+      "Leadership",
+      "Event Planning and Logistics",
+      "Communication",
+      "Teamwork",
+      "Fusion 360",
+      "3D Printing",
+      "OpenRocket",
+      "Microelectronics",
+      "Python",
+      "Arduino-C++",
+      "Git"
     ]
   }
 }
