@@ -27,17 +27,17 @@
   "experiences": {
     "Rowan-University": [
       "Molecular Dynamics Simulations",
-      "Data Analysis",
       "Python",
       "Bash",
+      "Slurm",
       "Scientific Computing"
     ],
     "Princeton-University": [
       "Density Functional Theory Simulations",
-      "Data Analysis",
       "Python",
       "Machine Learning",
       "Bash",
+      "Slurm",
       "Scientific Computing"
     ]
   }
