@@ -27,6 +27,7 @@
   "experiences": {
     "Rowan-University": [
       "Molecular Dynamics Simulations",
+      "LAMMPS",
       "Python",
       "Bash",
       "Slurm",
@@ -35,6 +36,7 @@
     ],
     "Princeton-University": [
       "Density Functional Theory Simulations",
+      "VASP",
       "Python",
       "Machine Learning",
       "Bash",
