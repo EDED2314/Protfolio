@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: beige;
+  background-color: var(--COLOR-7);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

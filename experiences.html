@@ -32,7 +32,7 @@
 
       <div class="experience-rows-container">
         <hr class="section-divider" />
-        <div class="experience-row">
+        <div class="experience-row" id="Rowan-University">
 
           <div class="experience-row-left">
             <div class="experience-brief">
@@ -87,76 +87,91 @@
             <div id="experience-image">
               <div class="experience-image-content">
                 <div class="experience-image-container">
-                  <img src="./assets/images/experiences/thermal-electric-material.jpg" class="experience-image">
+                  <img src="./assets/experiences/rowan/rowan.png" class="experience-image">
                   <!-- <span class="image-caption">Give your image a caption. People love context.</span> -->
                 </div>
               </div>
             </div>
 
             <!-- Skills for this experience will be injected here -->
-            <div class="experience-skills" data-experience="Thermoelectric-Materials-Research"></div>
+            <div class="experience-skills" data-experience="Rowan-University"></div>
           </div>
         </div>
 
         <hr class="section-divider" />
-        <div class="experience-row">
+        <div class="experience-row" id="Princeton-University">
+
           <div class="experience-row-left">
-            <div class="section-subheader-text">Experience Name</div>
-            <div class="experience-details-content">
-              <div class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt
-                ut labore et dolore magna aliqua. Tristique risus nec feugiat in fermentum. Sed id semper risus in
-                hendrerit
-                gravida. Placerat duis ultricies lacus sed. Id neque aliquam vestibulum morbi blandit cursus risus.
-                Elit
-                pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus
-                pretium
-                quam. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Vitae congue mauris rhoncus aenean
-                vel
-                elit.
+            <div class="experience-brief">
+              <div class="experience-who">
+                <div class="experience-brief-company">Princeton University</div>
               </div>
-              <div class="body-text">Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit
-                eget
-                gravida. Aliquet nec ullamcorper sit amet. Aliquet sagittis id consectetur purus. Ac tortor
-                dignissim
-                convallis aenean. Enim neque volutpat ac tincidunt vitae. Lobortis feugiat vivamus at augue. Platea
-                dictumst
-                vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat. Massa
-                tincidunt
-                nunc
-                pulvinar sapien et ligula. Donec enim diam vulputate ut.</div>
+              <div class="experience-brief-other-info">
+                <div class="experience-brief-role">Research Intern</div>
+                <div class="experience-brief-duration">June 2024 - August 2024</div>
+              </div>
+
+            </div>
+            <div class="experience-details-content">
+              <div class="body-text">
+                During the summer of 2024, I worked as a research intern under Prof. Ju in the Mechanical and Aerospace
+                Engineering Department at Princeton. My research focused on using density functional theory (DFT) in <a
+                  href="https://www.vasp.at/">VASP</a>(Vienna Ab initio Simulation Package) to simulate reaction
+                pathways
+                of NHx, N, and H species on WO₃ (001) surfaces to help understand how plasma can catalyze eNRR
+                (electrochemical nitrogen reduction reactions) through a Mars-van Krevelen (MvK) mechanism.
+              </div>
+              <div class="body-text">
+                To study different reaction pathways and energies, I created a custom VASP-based
+                Slurm workflow in Python for Princeton's supercomputing cluster that analyzed POSCAR, XDATCAR, OSZICAR,
+                and OUTCAR files from VASP to obtain relaxation energies, create custom screenshots of the simulated
+                systems, and analyze bonds between specific species. In
+                <a href="https://github.com/EDED2314/VASP-scripts">my scripts</a>, I used <a href="
+                  https://matplotlib.org/">Matplotlib</a>, <a href=" https://ase-lib.org/">ASE</a>, <a
+                  href=" https://pandas.pydata.org/">pandas</a>, and <a href=" https://numpy.org/"">NumPy</a>.
+              </div>
+
+              <div class=" body-text">
+                  Before I left, I took the lead to start a project by using DeepMD-kit to develop ML force fields
+                  tailored to NHx, N, and H species' interactions with WO3 surfaces for an increase in DFT simulation
+                  speeds.
+              </div>
+              <div class=" body-text" style="font-weight: 600;">
+                Feel free to read <a href="./assets/experiences/princeton/Princeton Research Report.pdf"
+                  target="_blank">my final progress report</a>, which covers everything with more depth.
+                Also feel free to read the <a
+                  href="https://pubs.acs.org/doi/10.1021/acsenergylett.5c01034">peer-reviewed
+                  publication</a> I co-authored in ACS Energy Letters.
+              </div>
+
             </div>
           </div>
 
-          <div class="experience-row-right">
+          <div class=" experience-row-right">
             <div id="experience-image">
               <div class="experience-image-content">
                 <div class="experience-image-container">
-                  <img src="./assets/images/code.jpeg" class="experience-image">
-                  <span class="image-caption">Give your image a caption. People love context.</span>
+                  <img src="./assets/experiences/princeton/princeton.png" class="experience-image">
                 </div>
               </div>
             </div>
-
-            <!-- Skills for this experience will be injected here -->
-            <div class="experience-skills" data-experience="Caterpillar"></div>
+            <div class="experience-skills" data-experience="Princeton-University"></div>
           </div>
         </div>
 
+
+
+
+        <div id="footer">
+          <a class="icon-link" target="_blank" href="https://linkedin.com/in/ejtang">
+            <image src="./assets/icons/linkedin-big-logo.svg" class="footer-icon" />
+          </a>
+          <a class="icon-link" href="mailto:eddiejt2@outlook.com">
+            <image src="./assets/icons/mail.svg" class="footer-icon" />
+          </a>
+        </div>
+
       </div>
-
-
-
-      <div id="footer">
-        <a class="icon-link" target="_blank" href="https://linkedin.com/in/ejtang">
-          <image src="./assets/icons/linkedin-big-logo.svg" class="footer-icon" />
-        </a>
-        <a class="icon-link" href="mailto:eddiejt2@outlook.com">
-          <image src="./assets/icons/mail.svg" class="footer-icon" />
-        </a>
-      </div>
-
-    </div>
 
 
 </body>

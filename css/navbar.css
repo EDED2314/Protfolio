@@ -12,7 +12,7 @@
     top: 0;
     left: 0;
     /* background: rgba(255, 255, 255); */
-    background-color: beige;
+    background-color: var(--COLOR-7);
     z-index: 1000;
 }
 
@@ -31,7 +31,7 @@
     #navbar-placeholder>.navbar,
     .navbar {
         padding: 20px 20px;
-        background-color: white
+        background-color: var(--COLOR-7);
     }
 }
 
