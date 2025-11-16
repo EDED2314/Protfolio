@@ -41,6 +41,15 @@
       "Slurm",
       "Scientific Computing",
       "SSH"
+    ],
+    "monty-csc": [
+      "Leadership",
+      "Event Planning and Logistics",
+      "Communication",
+      "Teamwork",
+      "Python",
+      "C++",
+      "Git"
     ]
   }
 }
