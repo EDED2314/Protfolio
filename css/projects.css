@@ -7,6 +7,9 @@
     margin-top: 10px;
 }
 
+.what-is-above-the-projects {
+    margin-top: 5px;
+}
 
 .project-title {
     font-size: 30px;
@@ -36,9 +39,11 @@
 
 .project-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 a.button.read-more {

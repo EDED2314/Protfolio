@@ -21,7 +21,15 @@
       ]
     }
   ],
-  "projects": {},
+  "projects": {
+    "Genibook": [
+      "Dart/Flutter",
+      "Python",
+      "Go",
+      "Insomnia",
+      "App development"
+    ]
+  },
   "experiences": {
     "Rowan-University": [
       "Molecular Dynamics Simulations",

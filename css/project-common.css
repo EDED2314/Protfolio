@@ -1,0 +1,15 @@
+.page-content {
+    gap: 20px
+}
+
+#project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
