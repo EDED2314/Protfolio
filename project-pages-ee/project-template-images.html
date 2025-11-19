@@ -9,7 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/project.css">
+  <link rel="stylesheet" href="../css/project-common.css">
+  <link rel="stylesheet" href="../css/project-images.css">
   <link rel="stylesheet" href="../css/skills.css">
   <link rel="stylesheet" href="../css/typography.css">
   <link rel="stylesheet" href="../css/utilities.css">
@@ -22,41 +23,13 @@
 <body>
   <div id="navbar-placeholder"></div>
 
-
-  <!-- MAIN PAGE CONTENT -->
-  <!-- HERO: full-screen centered header that stays visible on entry -->
-  <section id="hero">
-    <div class="hero-inner">
-      <!-- PROJECT HEADER -->
-      <div id="project-header">
-        <!-- 
-            TODO
-
-            - Change the 'main-title' text to the name of your project
-            - Change the 'body-text' text to a short and sweet description of your project (maybe the same as the one on the project card)
-            - Change "desktop.jpeg" to the image filename you uploaded in the assets/images folder.
-          -->
-        <div class="main-title">Project Name</div>
-        <div class="body-text">A small description about the project goes here, get the reader hooked on the project and
-          tell them why they should continue to read this page. Give it a sweet tagline.</div>
-        <img class="project-header-image" src="../assets/images/desktop.jpeg" alt="Project image">
-        <!-- Skills for this project will be injected here by JS. Set data-project to the slug used in assets/data/skills.json -->
-        <div class="project-skills" data-project="CAM-MK3"></div>
-      </div>
-
+  <div class="page-content">
+    <div class="what-is-above-the-projects">
+      <span class="main-title-big">Title</span>
+      <div class="project-skills" data-project="Genibook"></div>
+      <hr class="section-divider" />
     </div>
-  </section>
 
-  <!-- MAIN CONTENT -->
-  <div class="page-content hidden">
-
-    <!-- PROJECT DETAILS -->
-    <!-- 
-        TODO
-
-        - Change the 'subheader-text' to whatever header you want for project details
-        - Add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
     <div id="project-details">
       <div class="section-subheader-text">Project Details / Background</div>
       <div class="project-details-content">

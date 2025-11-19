@@ -49,13 +49,13 @@ This template is mobile friendly, so you won't have to worry about your site not
 Search for it and you'll find all the changes you need to make. That being said, there are some high level things to know:
 
 - Image assets that you add for projects, header photo, or the favicon should go in the `assets/images` folder
-- For every new project page, make a copy of `project-template.html` and keep it in the `project-pages` folder
+- For every new project page, make a copy of `project-template-narrative.html` and keep it in the `project-pages` folder
 - All styling is located in the `css` folder, have at it if you feel like changing up the styling.
 - The `js` folder holds one script file that you can add any custom Javascript into.
 <br />
 
 ### Creating a new project page and adding it to the homepage
-1. Make a copy of `project-template.html` in the `project-pages` folder and rename it to `<project-name>.html`
+1. Make a copy of `project-template-narrative.html` in the `project-pages` folder and rename it to `<project-name>.html`
 2. Open `index.html` and find the `div` with `className='project-container'`
 3. Add a new project card into that div. Here's the template for a project card:
 ```
