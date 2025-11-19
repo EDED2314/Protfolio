@@ -19,6 +19,21 @@
           "type": "experience"
         }
       ]
+    },
+    {
+      "name": "Scientific Computing",
+      "items": [
+        {
+          "label": "Rowan University",
+          "target": "Rowan-University",
+          "type": "experience"
+        },
+        {
+          "label": "Princeton University",
+          "target": "Princeton-University",
+          "type": "experience"
+        }
+      ]
     }
   ],
   "projects": {},
@@ -29,7 +44,6 @@
       "Python",
       "Bash",
       "Slurm",
-      "Scientific Computing",
       "SSH"
     ],
     "Princeton-University": [
@@ -39,7 +53,6 @@
       "Machine Learning",
       "Bash",
       "Slurm",
-      "Scientific Computing",
       "SSH"
     ],
     "monty-csc": [
