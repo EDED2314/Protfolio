@@ -12,11 +12,6 @@
           "label": "Princeton University",
           "target": "Princeton-University",
           "type": "experience"
-        },
-        {
-          "label": "Monty Computer Science Club",
-          "target": "monty-csc",
-          "type": "experience"
         }
       ]
     },
