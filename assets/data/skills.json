@@ -38,6 +38,30 @@
       "Go",
       "Insomnia",
       "App development"
+    ],
+    "CAM-MK3": [
+      "KiCAD",
+      "Video Decoder",
+      "ESP32-P4",
+      "Microelectronics"
+    ],
+    "GATOR": [
+      "KiCAD",
+      "HV Systems",
+      "GPS + RF",
+      "Microelectronics"
+    ],
+    "Monty-TARC-R3": [
+      "EasyEDA",
+      "Python SILSIM",
+      "C/C++",
+      "Microelectronics"
+    ],
+    "Coilgun": [
+      "Microelectronics",
+      "CAD",
+      "Physics E&M",
+      "Python"
     ]
   },
   "experiences": {
