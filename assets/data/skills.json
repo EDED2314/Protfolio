@@ -43,24 +43,46 @@
       "KiCAD",
       "Video Decoder",
       "ESP32-P4",
-      "Microelectronics"
+      "Embedded Hardware"
     ],
     "GATOR": [
       "KiCAD",
       "HV Systems",
       "GPS + RF",
-      "Microelectronics"
+      "Embedded Hardware"
     ],
     "Monty-TARC-R3": [
       "EasyEDA",
       "Python SILSIM",
       "C/C++",
-      "Microelectronics"
+      "Embedded Hardware"
     ],
     "Coilgun": [
       "Microelectronics",
-      "CAD",
       "Physics E&M",
+      "Creo Onshape CAD",
+      "Python"
+    ],
+    "Spaceshot-GNC": [
+      "Python",
+      "C/C++",
+      "Embedded Software",
+      "Data Analysis"
+    ],
+    "FireJams": [
+      "PyAudio",
+      "Tkinter",
+      "Threading",
+      "Sockets",
+      "Python"
+    ],
+    "Calls4Mental": [
+      "PyAudio",
+      "Threading",
+      "Computer Vision",
+      "OpenAI Speech-to-text API",
+      "Whisper",
+      "LLM",
       "Python"
     ]
   },
